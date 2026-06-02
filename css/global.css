@@ -3,3 +3,22 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --bg: #070b16;
+  --bg-soft: #0d1324;
+  --card: #111827;
+  --card-soft: rgba(17, 24, 39, 0.72);
+  --border: rgba(148, 163, 184, 0.18);
+  --text: #f8fafc;
+  --muted: #9aa8bd;
+  --cyan: #67e8f9;
+  --purple: #a78bfa;
+  --green: #5eead4;
+  --yellow: #fbbf24;
+  --orange: #fb923c;
+  --red: #ef4444;
+  --shadow: 0 0 40px rgba(103, 232, 249, 0.20);
+  --radius: 14px;
+  --container: 1180px;
+}
