@@ -10,3 +10,14 @@
   border-radius: 50%;
 }
 
+
+.member-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.member-links a {
+  color: var(--cyan);
+  font-weight: 800;
+}
