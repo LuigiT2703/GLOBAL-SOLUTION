@@ -10,3 +10,15 @@
   text-decoration: none;
   cursor: pointer;
 }
+
+.button--primary {
+  color: #06111f;
+  background: linear-gradient(90deg, var(--cyan), var(--purple));
+  box-shadow: var(--shadow);
+}
+
+.button--secondary {
+  border-color: var(--border);
+  color: var(--text);
+  background: rgba(17, 24, 39, 0.60);
+}
