@@ -1,0 +1,71 @@
+.hero {
+  position: relative;
+  min-height: calc(100vh - 72px);
+  overflow: hidden;
+}
+
+.hero--earth {
+  background: url("../assets/hero-earth.jpg") center / cover no-repeat;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(7, 11, 22, 0.55), rgba(7, 11, 22, 0.80) 62%, var(--bg)),
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: auto, 44px 44px, 44px 44px;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  padding: clamp(72px, 9vw, 130px) 0;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  background: rgba(17, 24, 39, 0.68);
+  backdrop-filter: blur(12px);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.status-pill span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--cyan);
+  box-shadow: 0 0 16px var(--cyan);
+}
+
+.hero h1,
+.page-hero h1 {
+  max-width: 900px;
+  margin: 22px 0 0;
+  font-size: clamp(2.6rem, 7vw, 5.8rem);
+  line-height: 1.03;
+  letter-spacing: -0.04em;
+}
+
+.hero p,
+.page-hero p,
+.muted {
+  max-width: 760px;
+  color: var(--muted);
+  font-size: 1.08rem;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 32px;
+}
