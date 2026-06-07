@@ -1,0 +1,90 @@
+.live-note,
+.data-source {
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.live-weather-grid,
+.forecast-table {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.live-card {
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card-soft);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.20);
+}
+
+.live-card::before {
+  position: absolute;
+  top: -46px;
+  right: -42px;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(103, 232, 249, 0.18), transparent 70%);
+  content: "";
+}
+
+.live-card__top {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  position: relative;
+}
+
+.live-card strong {
+  display: block;
+  font-size: 1.1rem;
+}
+
+.live-card small,
+.live-card p {
+  color: var(--muted);
+}
+
+.live-risk {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 58px;
+  height: 34px;
+  border-radius: 999px;
+  color: #06111f;
+  background: linear-gradient(90deg, var(--cyan), var(--purple));
+  font-weight: 900;
+}
+
+.live-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.live-metrics span {
+  padding: 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: rgba(7, 11, 22, 0.48);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.live-metrics b {
+  display: block;
+  color: var(--text);
+  font-size: 1rem;
+}
+
+.risk-low { color: var(--green); }
+.risk-medium { color: var(--yellow); }
+.risk-high { color: var(--orange); }
+.risk-critical { color: var(--red); }
