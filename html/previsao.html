@@ -27,5 +27,60 @@
       <a href="integrantes.html">Integrantes</a>
       <a class="nav-cta" href="contato.html">Solicitar acesso</a>
     </nav>
-  </header>    
+  </header> 
+   <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Previsao IA</p>
+        <h1>Modelos preditivos para antecipar desastres.</h1>
+        <p>A inteligencia artificial cruza dados historicos, leituras orbitais e indicadores ambientais para estimar risco antes do evento acontecer.</p>
+        <p class="live-note">Abaixo, a previsao real e carregada automaticamente pela Open-Meteo para regioes brasileiras monitoradas.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split-grid">
+        <div class="prediction-panel">
+          <h2>Simulador de risco</h2>
+          <form class="risk-form" id="riskForm">
+            <label for="riskType">Tipo de evento</label>
+            <select id="riskType">
+              <option value="enchente">Enchente</option>
+              <option value="queimada">Queimada</option>
+              <option value="seca">Seca</option>
+              <option value="deslizamento">Deslizamento</option>
+            </select>
+            <label for="riskLevel">Intensidade observada</label>
+            <input id="riskLevel" type="range" min="10" max="100" value="72">
+            <button class="button button--primary" type="submit">Gerar previsao</button>
+          </form>
+          <p class="prediction-result" id="predictionResult">Risco estimado: 72%. Acompanhar area e preparar alerta preventivo.</p>
+        </div>
+        <div class="glow-card">
+          <p class="eyebrow">Pipeline</p>
+          <h2>Como a IA decide</h2>
+          <ol class="steps">
+            <li>Recebe imagens de satelite e dados climaticos.</li>
+            <li>Compara com padroes historicos de desastre.</li>
+            <li>Calcula probabilidade, severidade e tempo de resposta.</li>
+            <li>Gera recomendacoes para equipes e populacao.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+  
+    <section class="section section--panel">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Previsao real</p>
+          <h2>Risco calculado por localidade</h2>
+          <p>O painel cruza temperatura, chuva prevista, vento e tipo de regiao para gerar uma leitura de risco ambiental.</p>
+        </div>
+        <div class="forecast-table" id="forecastTable">
+          <article class="live-card"><strong>Carregando previsoes...</strong><p>Buscando dados reais de clima</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
   </body>
