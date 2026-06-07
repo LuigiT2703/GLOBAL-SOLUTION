@@ -1,0 +1,33 @@
+.severity-box {
+  margin-top: 32px;
+}
+
+.severity-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 18px;
+}
+
+.severity-grid article {
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: rgba(7, 11, 22, 0.48);
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.dot--green { background: var(--green); box-shadow: 0 0 16px var(--green); }
+.dot--yellow { background: var(--yellow); box-shadow: 0 0 16px var(--yellow); }
+.dot--orange { background: var(--orange); box-shadow: 0 0 16px var(--orange); }
+.dot--red { background: var(--red); box-shadow: 0 0 16px var(--red); }
+
+.steps {
+  display: grid;
+  gap: 12px;
+  padding-left: 20px;
+}
