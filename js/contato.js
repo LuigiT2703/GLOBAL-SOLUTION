@@ -29,4 +29,13 @@ if (contactForm) {
       }
     });
 
-    
+    const status = document.querySelector("#formStatus");
+
+    if (isValid) {
+      status.textContent = "Mensagem validada com sucesso. Envio simulado para a entrega academica.";
+      contactForm.reset();
+    } else {
+      status.textContent = "";
+    }
+  });
+}
