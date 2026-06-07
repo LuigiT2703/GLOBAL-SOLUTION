@@ -116,18 +116,14 @@ O projeto usa a API publica Open-Meteo para buscar dados climaticos reais de Por
 
 ## Link do repositorio
 
-Adicione aqui o link publico do GitHub:
-
 ```text
 https://github.com/LuigiT2703/GLOBAL-SOLUTION
 ```
 
 ## Contato
 
-Adicione aqui o e-mail ou canal de contato do grupo.
-
 ```text
-grupo@email.com
+cauadesouzavasconcellos@gmail.com
 ```
 
 ## Observacoes para entrega
