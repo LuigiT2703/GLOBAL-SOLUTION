@@ -100,7 +100,7 @@ O projeto usa a API publica Open-Meteo para buscar dados climaticos reais de Por
 | Nome | RM | Turma | Foto | GitHub | LinkedIn |
 | --- | --- | --- | --- | --- | --- |
 | Cauã De Souza | RM573349 | 1TDSPG | `assets/caua.jpg` | [cauadesouzavasconcellos-byte](https://github.com/cauadesouzavasconcellos-byte) | [LinkedIn](https://www.linkedin.com/in/cau%C3%A3-souza-b92261395?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app) |
-| Leonardo Bernard | RM570951 | 1TDSPG | `assets/leo.jpg` | [bernardleonardo](https://github.com/bernardleonardo) | [Linkedin]  (https://www.linkedin.com/in/leonardo-de-souza-573306410?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app) |
+| Leonardo Bernard | RM570951 | 1TDSPG | `assets/leo.jpg` | [bernardleonardo](https://github.com/bernardleonardo) | [Linkedin](https://www.linkedin.com/in/leonardo-de-souza-573306410?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app) |
 | Luigi Tormim | RM572424 | 1TDSPG | `assets/luigi_perfil.png` | [LuigiT2703](https://github.com/LuigiT2703) | [LinkedIn](https://www.linkedin.com/in/luigi-tormim-b64738393?utm_source=share_via&utm_content=profile&utm_medium=member_ios) |
 | Pedro Henrique | RM569497 | 1TDSPG | `assets/pedro.png` | [Pedro-H-Salvatore](https://github.com/Pedro-H-Salvatore) | [LinkedIn](https://www.linkedin.com/in/pedro-salvatore-a4a2763b7/) |
 
