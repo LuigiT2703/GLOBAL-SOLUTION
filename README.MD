@@ -126,9 +126,4 @@ https://github.com/LuigiT2703/GLOBAL-SOLUTION
 cauadesouzavasconcellos@gmail.com
 ```
 
-## Observacoes para entrega
 
-- Trocar nomes, RMs, turma, links e fotos antes de entregar.
-- Criar repositorio publico no GitHub.
-- Fazer pelo menos 15 commits significativos para evitar penalidade.
-- Compactar o projeto em `.zip` com os arquivos e a pasta `.git`.
