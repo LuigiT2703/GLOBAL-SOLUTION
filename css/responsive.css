@@ -1,0 +1,74 @@
+@media (max-width: 980px) {
+  .menu-toggle {
+    display: inline-block;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 14px 18px 18px;
+    background: rgba(7, 11, 22, 0.98);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .site-nav.is-open {
+    display: flex;
+  }
+
+  .site-nav .nav-cta {
+    margin-left: 0;
+  }
+
+  .stats-grid,
+  .metric-row,
+  .disaster-grid,
+  .channel-grid,
+  .severity-grid,
+  .live-weather-grid,
+  .forecast-table,
+  .team-grid,
+  .split-grid,
+  .monitor-grid,
+  .contact-layout {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .container {
+    width: min(100% - 28px, var(--container));
+  }
+
+  .hero h1,
+  .page-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .stats-grid,
+  .metric-row,
+  .disaster-grid,
+  .channel-grid,
+  .severity-grid,
+  .live-weather-grid,
+  .forecast-table,
+  .team-grid,
+  .split-grid,
+  .monitor-grid,
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .footer-grid {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
