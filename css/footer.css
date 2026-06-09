@@ -36,14 +36,3 @@
   color: var(--text);
 }
 
-@media (max-width: 620px) {
-  .cta-box {
-    border-radius: 18px;
-  }
-
-  .footer-grid {
-    align-items: flex-start;
-    flex-direction: column;
-    text-align: left;
-  }
-}
