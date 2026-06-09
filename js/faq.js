@@ -1,4 +1,4 @@
-document.querySelectorAll("[data-accordion] .faq-question").forEach((button) => {
+﻿document.querySelectorAll("[data-accordion] .faq-question").forEach((button) => {
   button.addEventListener("click", () => {
     const item = button.closest(".faq-item");
 
@@ -7,3 +7,5 @@ document.querySelectorAll("[data-accordion] .faq-question").forEach((button) => 
     }
   });
 });
+
+

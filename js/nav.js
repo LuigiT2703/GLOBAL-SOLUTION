@@ -1,4 +1,4 @@
-const menuButton = document.querySelector(".menu-toggle");
+﻿const menuButton = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector(".site-nav");
 
 if (menuButton && siteNav) {
@@ -15,3 +15,5 @@ document.querySelectorAll(".site-nav a").forEach((link) => {
     link.classList.add("is-active");
   }
 });
+
+

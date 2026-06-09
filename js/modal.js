@@ -1,4 +1,4 @@
-const modal = document.querySelector("#infoModal");
+﻿const modal = document.querySelector("#infoModal");
 const modalTitle = document.querySelector("#modalTitle");
 const modalText = document.querySelector("#modalText");
 const modalClose = document.querySelector(".modal__close");
@@ -16,7 +16,7 @@ document.querySelectorAll(".modal-open").forEach((button) => {
     if (!modal || !modalTitle || !modalText) return;
 
     modalTitle.textContent = button.dataset.modalTitle || "Detalhes do alerta";
-    modalText.textContent = button.dataset.modalText || "Informacoes indisponiveis no momento.";
+    modalText.textContent = button.dataset.modalText || "Informacoes indisponíveis no momento.";
     modal.classList.add("is-open");
     modal.setAttribute("aria-hidden", "false");
     document.body.classList.add("modal-opened");
@@ -40,3 +40,6 @@ document.addEventListener("keydown", (event) => {
     closeModal();
   }
 });
+
+
+
