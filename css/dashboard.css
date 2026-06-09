@@ -125,3 +125,39 @@ meter {
 .alert-card p {
   color: var(--muted);
 }
+
+@media (max-width: 860px) {
+  .split-grid,
+  .monitor-grid,
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .orbit-console {
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 620px) {
+  .timeline-list article,
+  .alert-card div {
+    flex-direction: column;
+  }
+
+  .timeline-list span {
+    width: 40px;
+    height: 40px;
+  }
+
+  .map-alert {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media (max-width: 420px) {
+  .console-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}

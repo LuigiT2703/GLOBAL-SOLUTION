@@ -86,3 +86,86 @@
   margin: 5px auto;
   background: var(--text);
 }
+
+@media (max-width: 1180px) {
+  .site-header {
+    padding-inline: 22px;
+  }
+
+  .site-nav {
+    gap: 2px;
+  }
+
+  .site-nav a {
+    padding-inline: 9px;
+    font-size: 0.86rem;
+  }
+}
+
+@media (max-width: 1040px) {
+  .menu-toggle {
+    display: inline-block;
+    flex: 0 0 auto;
+  }
+
+  .site-header {
+    min-height: 72px;
+  }
+
+  .site-nav {
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+    max-height: calc(100vh - 72px);
+    overflow-y: auto;
+    padding: 14px 18px 18px;
+    background: rgba(7, 11, 22, 0.98);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .site-nav.is-open {
+    display: flex;
+  }
+
+  .site-nav a {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 0.96rem;
+  }
+
+  .site-nav .nav-cta {
+    margin-left: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 620px) {
+  .site-header {
+    padding-inline: 14px;
+  }
+
+  .brand {
+    min-width: 0;
+    font-size: 1rem;
+  }
+
+  .brand__icon {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (max-width: 420px) {
+  .site-header {
+    gap: 10px;
+  }
+
+  .brand span {
+    overflow-wrap: anywhere;
+  }
+}

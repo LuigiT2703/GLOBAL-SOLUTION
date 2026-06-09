@@ -1,9 +1,3 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 :root {
   --bg: #070b16;
   --bg-soft: #0d1324;
@@ -21,6 +15,10 @@
   --shadow: 0 0 40px rgba(103, 232, 249, 0.20);
   --radius: 14px;
   --container: 1180px;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 html {
@@ -50,4 +48,16 @@ a {
 .container {
   width: min(var(--container), calc(100% - 36px));
   margin: 0 auto;
+}
+
+@media (max-width: 620px) {
+  .container {
+    width: min(100% - 28px, var(--container));
+  }
+}
+
+@media (max-width: 420px) {
+  .container {
+    width: min(100% - 22px, var(--container));
+  }
 }
