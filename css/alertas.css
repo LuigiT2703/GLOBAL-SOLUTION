@@ -31,3 +31,19 @@
   gap: 12px;
   padding-left: 20px;
 }
+
+@media (max-width: 1040px) {
+  .severity-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .severity-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .severity-box {
+    padding: 18px;
+  }
+}
