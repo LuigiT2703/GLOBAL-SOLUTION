@@ -1,15 +1,6 @@
-@media (min-width: 1300px) {
-  .container {
-    width: min(1240px, calc(100% - 64px));
-  }
-
-  .hero__content {
-    padding-top: 150px;
-    padding-bottom: 150px;
+@media (max-width: 620px) {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
   }
 }
-
-@media (max-width: 980px) {
-  .menu-toggle {
-    display: inline-block;
-  }
