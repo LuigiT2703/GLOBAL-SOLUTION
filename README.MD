@@ -13,26 +13,27 @@ A OrbitAlert simula uma Earth Intelligence Platform que usa dados orbitais e int
 ## Tecnologias utilizadas
 
 - HTML5 semantico
-- CSS3 responsivo
+- CSS3 responsivo com media queries
 - JavaScript puro
 - Imagens e icones em `assets/`
+- API publica Open-Meteo para previsao climatica real
 
 ## Estrutura de pastas
 
 ```text
-GlobalSolutionFront/
+GLOBAL SOLUTION/
 |-- assets/
 |   |-- caua.jpg
 |   |-- hero-earth.jpg
 |   |-- leo.jpg
-|   |-- luigi_perfil.png
-|   |-- monitoring-map.jpg
-|   |-- pedro.png
 |   |-- logo.svg
-|   `-- member-placeholder.svg
+|   |-- luigi_perfil.png
+|   |-- member-placeholder.svg
+|   |-- monitoring-map.jpg
+|   `-- pedro.png
 |-- css/
 |   |-- alertas.css
-|   |-- buttons.css
+|   |-- button.css
 |   |-- cards.css
 |   |-- contato.css
 |   |-- dashboard.css
@@ -46,40 +47,41 @@ GlobalSolutionFront/
 |   |-- nav.css
 |   |-- previsao.css
 |   `-- responsive.css
+|-- html/
+|   |-- contato.html
+|   |-- faq.html
+|   |-- index.html
+|   |-- integrantes.html
+|   |-- previsao.html
+|   |-- sobre.html
+|   |-- solucao-alertas.html
+|   `-- solucao-monitoramento.html
 |-- js/
 |   |-- contador.js
 |   |-- contato.js
 |   |-- faq.js
-|   |-- main.js
 |   |-- modal.js
 |   |-- nav.js
 |   `-- previsao.js
-|-- contato.html
-|-- faq.html
-|-- index.html
-|-- integrantes.html
-|-- previsao.html
-|-- solucao-alertas.html
-|-- solucao-monitoramento.html
-|-- sobre.html
-`-- README.md
+`-- README.MD
 ```
 
 ## Paginas do projeto
 
-- `index.html`: pagina inicial com hero, cobertura de desastres, funcionamento e chamada final.
-- `solucao-monitoramento.html`: painel de monitoramento com mapa orbital e alertas ativos.
-- `previsao.html`: simulador de previsao IA.
-- `solucao-alertas.html`: canais de notificacao e niveis de severidade.
-- `sobre.html`: problema, proposta e tecnologias.
-- `faq.html`: perguntas frequentes com acordeon.
-- `integrantes.html`: integrantes com nome, RM, turma, GitHub, LinkedIn e foto.
-- `contato.html`: formulario com validacao JavaScript.
+- `html/index.html`: pagina inicial com hero, cobertura de desastres, funcionamento e chamada final.
+- `html/solucao-monitoramento.html`: painel de monitoramento com mapa orbital, alertas ativos e dados climaticos reais.
+- `html/previsao.html`: simulador de previsao IA.
+- `html/solucao-alertas.html`: canais de notificacao e niveis de severidade.
+- `html/sobre.html`: problema, proposta e tecnologias.
+- `html/faq.html`: perguntas frequentes com acordeon.
+- `html/integrantes.html`: integrantes com nome, RM, turma, GitHub, LinkedIn e foto.
+- `html/contato.html`: formulario com validacao JavaScript.
 
 ## Funcionalidades
 
 - Menu responsivo com botao mobile.
 - Links de navegacao entre todas as paginas.
+- JavaScript carregado no `<head>` com `defer`.
 - Modal de detalhes nos alertas ativos.
 - FAQ em acordeon.
 - Formulario com validacao e `preventDefault()`.
@@ -89,7 +91,11 @@ GlobalSolutionFront/
 - Calculo de risco por localidade com temperatura, chuva, vento e umidade.
 - Atualizacao automatica dos dados climaticos a cada 10 minutos.
 - CSS organizado em arquivos separados dentro de `css/`; o `main.css` importa os demais.
-- JavaScript organizado em arquivos separados dentro de `js/`, todos carregados no `<head>` com `defer`.
+- JavaScript organizado em arquivos separados dentro de `js/`.
+
+## Media queries
+
+O arquivo `css/responsive.css` concentra as adaptacoes para telas grandes, tablets e celulares, com breakpoints em `1300px`, `980px`, `768px`, `620px` e `480px`.
 
 ## Dados em tempo real
 
@@ -99,8 +105,8 @@ O projeto usa a API publica Open-Meteo para buscar dados climaticos reais de Por
 
 | Nome | RM | Turma | Foto | GitHub | LinkedIn |
 | --- | --- | --- | --- | --- | --- |
-| Cauã De Souza | RM573349 | 1TDSPG | `assets/caua.jpg` | [cauadesouzavasconcellos-byte](https://github.com/cauadesouzavasconcellos-byte) | [LinkedIn](https://www.linkedin.com/in/cau%C3%A3-souza-b92261395?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app) |
-| Leonardo Bernard | RM570951 | 1TDSPG | `assets/leo.jpg` | [bernardleonardo](https://github.com/bernardleonardo) | [Linkedin](https://www.linkedin.com/in/leonardo-de-souza-573306410?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app) |
+| Caua De Souza | RM573349 | 1TDSPG | `assets/caua.jpg` | [cauadesouzavasconcellos-byte](https://github.com/cauadesouzavasconcellos-byte) | [LinkedIn](https://www.linkedin.com/in/cau%C3%A3-souza-b92261395?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app) |
+| Leonardo Bernard | RM570951 | 1TDSPG | `assets/leo.jpg` | [bernardleonardo](https://github.com/bernardleonardo) | [LinkedIn](https://www.linkedin.com/in/leonardo-de-souza-573306410?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app) |
 | Luigi Tormim | RM572424 | 1TDSPG | `assets/luigi_perfil.png` | [LuigiT2703](https://github.com/LuigiT2703) | [LinkedIn](https://www.linkedin.com/in/luigi-tormim-b64738393?utm_source=share_via&utm_content=profile&utm_medium=member_ios) |
 | Pedro Henrique | RM569497 | 1TDSPG | `assets/pedro.png` | [Pedro-H-Salvatore](https://github.com/Pedro-H-Salvatore) | [LinkedIn](https://www.linkedin.com/in/pedro-salvatore-a4a2763b7/) |
 
@@ -109,7 +115,7 @@ O projeto usa a API publica Open-Meteo para buscar dados climaticos reais de Por
 - `assets/logo.svg`: logo do OrbitAlert.
 - `assets/hero-earth.jpg`: imagem principal da pagina inicial.
 - `assets/monitoring-map.jpg`: mapa orbital usado no monitoramento.
-- `assets/caua.jpg`: foto de Cauã De Souza.
+- `assets/caua.jpg`: foto de Caua De Souza.
 - `assets/leo.jpg`: foto de Leonardo Bernard.
 - `assets/luigi_perfil.png`: foto de Luigi Tormim.
 - `assets/pedro.png`: foto de Pedro Henrique.
@@ -125,5 +131,3 @@ https://github.com/LuigiT2703/GLOBAL-SOLUTION
 ```text
 cauadesouzavasconcellos@gmail.com
 ```
-
-
