@@ -1,0 +1,37 @@
+.cta-section {
+  padding-top: 24px;
+}
+
+.cta-box {
+  padding: clamp(32px, 7vw, 72px);
+  border: 1px solid var(--border);
+  border-radius: 26px;
+  background:
+    linear-gradient(135deg, rgba(103, 232, 249, 0.10), rgba(167, 139, 250, 0.16)),
+    var(--card);
+  text-align: center;
+}
+
+.cta-box p {
+  max-width: 680px;
+  margin: 0 auto 24px;
+  color: var(--muted);
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.footer-grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 34px 0;
+  color: var(--muted);
+}
+
+.footer-grid strong {
+  color: var(--text);
+}

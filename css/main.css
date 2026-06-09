@@ -5,3 +5,11 @@
 @import url(cards.css);
 @import url(nav.css);
 @import url(faq.css);
+
+@import url(index.css);
+@import url(previsao.css);
+@import url(contato.css);
+@import url(modal.css);
+@import url(responsive.css);
+@import url("dashboard.css");
+@import url("alertas.css");
