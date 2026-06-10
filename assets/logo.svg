@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-labelledby="title">
+  <title id="title">Logo OrbitAlert</title>
+  <defs>
+    <linearGradient id="orbit" x1="10" y1="12" x2="70" y2="68" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#67e8f9"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+  </defs>
+  <rect width="80" height="80" rx="18" fill="#070b16"/>
+  <ellipse cx="40" cy="40" rx="29" ry="11" fill="none" stroke="url(#orbit)" stroke-width="5" transform="rotate(-20 40 40)"/>
+  <circle cx="40" cy="40" r="11" fill="url(#orbit)"/>
+  <circle cx="64" cy="25" r="5" fill="#67e8f9"/>
+</svg>

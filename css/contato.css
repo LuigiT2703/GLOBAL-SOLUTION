@@ -1,0 +1,60 @@
+.contact-form,
+.prediction-panel {
+  display: grid;
+  gap: 16px;
+}
+
+.form-field,
+.risk-form {
+  display: grid;
+  gap: 8px;
+}
+
+label {
+  font-weight: 800;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 13px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  background: rgba(7, 11, 22, 0.78);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 3px solid rgba(103, 232, 249, 0.20);
+  border-color: var(--cyan);
+}
+
+.error-message {
+  min-height: 18px;
+  color: var(--red);
+  font-weight: 700;
+}
+
+.form-status,
+.prediction-result {
+  margin: 0;
+  color: var(--cyan);
+  font-weight: 800;
+}
+
+@media (max-width: 860px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 620px) {
+  .contact-form,
+  .prediction-panel {
+    padding: 18px;
+  }
+}

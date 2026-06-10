@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OrbitAlert | Monitoramento</title>
+  <link rel="stylesheet" href="../css/main.css">
+  <script src="../js/nav.js" defer></script>
+  <script src="../js/faq.js" defer></script>
+  <script src="../js/modal.js" defer></script>
+  <script src="../js/contato.js" defer></script>
+  <script src="../js/previsao.js" defer></script>
+  <script src="../js/contador.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html"><img src="../assets/logo.svg" alt="" class="brand__icon"><span>Orbit<span>Alert</span></span></a>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <nav class="site-nav" aria-label="Menu principal">
+      <a href="index.html">Início</a>
+      <a href="solucao-monitoramento.html">Monitoramento</a>
+      <a href="previsao.html">Previsão IA</a>
+      <a href="solucao-alertas.html">Alertas</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="faq.html">FAQ</a>
+      <a href="integrantes.html">Integrantes</a>
+      <a class="nav-cta" href="contato.html">Solicitar acesso</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <p class="eyebrow">Mission Control</p>
+        <h1>Monitoramento em tempo real</h1>
+        <p>Constelações orbitais integradas, eventos ambientais geolocalizados e prontidão operacional 24/7.</p>
+        <div class="metric-row">
+          <article><span>SAT</span><strong id="satMetric">12 / 12</strong><p>Satélites ativos</p></article>
+          <article><span>RT</span><strong id="latencyMetric">1.8s</strong><p>Latência média</p></article>
+          <article><span>EVT</span><strong id="eventsMetric">1.247</strong><p>Eventos hoje</p></article>
+          <article><span>!</span><strong id="criticalMetric">23</strong><p>Alertas críticos</p></article>
+        </div>
+        <p class="live-note">Dados climáticos reais via Open-Meteo. Alertas orbitais e satélites são indicadores demonstrativos do protótipo.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container monitor-grid">
+        <div>
+          <h2>Mapa orbital global</h2>
+          <div class="map-image">
+            <img src="../assets/monitoring-map.jpg" alt="Mapa global de monitoramento orbital">
+            <span class="map-alert map-alert--one"></span>
+            <span class="map-alert map-alert--two"></span>
+            <span class="map-alert map-alert--three"></span>
+            <span class="map-alert map-alert--four"></span>
+          </div>
+        </div>
+        <aside>
+          <h2>Alertas ativos</h2>
+          <div class="alert-stack">
+            <button class="alert-card modal-open" type="button" data-modal-title="AMZ-2026-091 - Queimada" data-modal-text="Foco de calor detectado na Amazônia. Risco de expansão de 92%. Acionar equipes locais e monitorar direção do vento.">
+              <div><strong>Queimada</strong><span>AMZ-2026-091</span></div>
+              <p>Amazônia (PA)</p>
+              <meter min="0" max="100" value="92"></meter>
+            </button>
+            <button class="alert-card modal-open" type="button" data-modal-title="RS-2026-117 - Enchente" data-modal-text="Risco de enchente em Porto Alegre. Priorizar vias elevadas, pontos de abrigo e alerta para população ribeirinha.">
+              <div><strong>Enchente</strong><span>RS-2026-117</span></div>
+              <p>Rio Grande do Sul (Porto Alegre)</p>
+              <meter min="0" max="100" value="78"></meter>
+            </button>
+            <button class="alert-card modal-open" type="button" data-modal-title="PE-2026-044 - Deslizamento" data-modal-text="Encostas com saturação elevada em Recife. Orientar retirada preventiva e bloquear áreas instáveis.">
+              <div><strong>Deslizamento</strong><span>PE-2026-044</span></div>
+              <p>Pernambuco (Recife)</p>
+              <meter min="0" max="100" value="71"></meter>
+            </button>
+          </div>
+        </aside>
+      </div>
+    </section>
+  
+    <section class="section section--panel">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Tempo real</p>
+          <h2>Previsão real das regiões monitoradas</h2>
+          <p>Temperatura, chuva, vento e risco calculado no navegador com base nos dados atuais da Open-Meteo.</p>
+        </div>
+        <div class="live-weather-grid" id="liveWeatherGrid">
+          <article class="live-card"><strong>Carregando dados reais...</strong><p>Conectando com Open-Meteo</p></article>
+        </div>
+        <p class="data-source" id="weatherUpdatedAt">Aguardando atualização.</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="infoModal" aria-hidden="true">
+    <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal__close" type="button" aria-label="Fechar modal">&times;</button>
+      <h2 id="modalTitle">Detalhes</h2>
+      <p id="modalText"></p>
+    </div>
+  </div>
+
+  <footer class="site-footer"><div class="container footer-grid"><strong>OrbitAlert</strong><p>Earth Intelligence Platform</p></div></footer>
+</body>
+</html>
+
+
+
+
+
