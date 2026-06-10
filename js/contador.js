@@ -1,43 +1,63 @@
-﻿const monitoredPlaces = [
+const monitoredPlaces = [
   {
     name: "Porto Alegre",
     region: "Rio Grande do Sul",
     event: "Enchente",
-    lat: -30.0346,
-    lon: -51.2177,
-    weight: "flood"
+    weight: "flood",
+    weather: {
+      temperature: 23,
+      humidity: 88,
+      wind: 18,
+      rain: 42.6
+    }
   },
   {
     name: "Belém",
     region: "Amazônia (PA)",
     event: "Queimada / chuva intensa",
-    lat: -1.4558,
-    lon: -48.4902,
-    weight: "rain"
+    weight: "rain",
+    weather: {
+      temperature: 30,
+      humidity: 82,
+      wind: 12,
+      rain: 18.4
+    }
   },
   {
     name: "Recife",
     region: "Pernambuco",
     event: "Deslizamento",
-    lat: -8.0476,
-    lon: -34.8770,
-    weight: "landslide"
+    weight: "landslide",
+    weather: {
+      temperature: 27,
+      humidity: 86,
+      wind: 21,
+      rain: 31.2
+    }
   },
   {
     name: "Cuiabá",
     region: "Mato Grosso",
     event: "Queimada",
-    lat: -15.6014,
-    lon: -56.0979,
-    weight: "fire"
+    weight: "fire",
+    weather: {
+      temperature: 35,
+      humidity: 38,
+      wind: 16,
+      rain: 1.8
+    }
   },
   {
     name: "Petrolina",
     region: "Sertão (PE)",
     event: "Seca severa",
-    lat: -9.3891,
-    lon: -40.5030,
-    weight: "drought"
+    weight: "drought",
+    weather: {
+      temperature: 34,
+      humidity: 35,
+      wind: 19,
+      rain: 0.4
+    }
   }
 ];
 
@@ -72,20 +92,21 @@ function updateOperationalCounters() {
   if (criticalMetric) criticalMetric.textContent = String(18 + (seconds % 8));
 }
 
-function calculateRisk(place, weather) {
-  const temp = weather.current.temperature_2m || 0;
-  const rain = weather.current.precipitation || 0;
-  const wind = weather.current.wind_speed_10m || 0;
-  const humidity = weather.current.relative_humidity_2m || 0;
-  const dailyRain = weather.daily.precipitation_sum?.[0] || 0;
+function calculateRisk(place) {
+  const seconds = Math.floor(Date.now() / 1000);
+  const variation = (seconds % 9) - 4;
+  const temp = place.weather.temperature;
+  const rain = place.weather.rain;
+  const wind = place.weather.wind;
+  const humidity = place.weather.humidity;
 
-  let risk = 18 + wind * 0.7 + dailyRain * 2.2 + rain * 8;
+  let risk = 18 + wind * 0.7 + rain * 2.2 + variation;
 
   if (place.weight === "fire") risk += Math.max(0, temp - 30) * 5 + Math.max(0, 55 - humidity) * 0.9;
   if (place.weight === "drought") risk += Math.max(0, temp - 29) * 4 + Math.max(0, 50 - humidity) * 1.1;
-  if (place.weight === "flood") risk += dailyRain * 3.1 + rain * 10;
-  if (place.weight === "landslide") risk += dailyRain * 2.8 + rain * 9 + Math.max(0, humidity - 80) * 0.7;
-  if (place.weight === "rain") risk += dailyRain * 2.4 + rain * 7;
+  if (place.weight === "flood") risk += rain * 3.1;
+  if (place.weight === "landslide") risk += rain * 2.8 + Math.max(0, humidity - 80) * 0.7;
+  if (place.weight === "rain") risk += rain * 2.4;
 
   return Math.max(5, Math.min(99, Math.round(risk)));
 }
@@ -97,32 +118,13 @@ function riskLabel(risk) {
   return { text: "Baixo", className: "risk-low" };
 }
 
-async function getWeather(place) {
-  const params = new URLSearchParams({
-    latitude: place.lat,
-    longitude: place.lon,
-    current: "temperature_2m,relative_humidity_2m,precipitation,wind_speed_10m",
-    daily: "temperature_2m_max,precipitation_sum,wind_speed_10m_max",
-    forecast_days: "1",
-    timezone: "America/Sao_Paulo"
-  });
-
-  const response = await fetch(`https://api.open-meteo.com/v1/forecast?${params.toString()}`);
-
-  if (!response.ok) {
-    throw new Error("Não foi possível carregar a previsão.");
-  }
-
-  return response.json();
-}
-
-function renderWeatherCard(place, weather) {
-  const risk = calculateRisk(place, weather);
+function renderWeatherCard(place) {
+  const risk = calculateRisk(place);
   const label = riskLabel(risk);
-  const temp = Math.round(weather.current.temperature_2m);
-  const humidity = Math.round(weather.current.relative_humidity_2m);
-  const wind = Math.round(weather.current.wind_speed_10m);
-  const rain = weather.daily.precipitation_sum?.[0] ?? 0;
+  const temp = Math.round(place.weather.temperature);
+  const humidity = Math.round(place.weather.humidity);
+  const wind = Math.round(place.weather.wind);
+  const rain = place.weather.rain;
 
   return `
     <article class="live-card">
@@ -138,45 +140,25 @@ function renderWeatherCard(place, weather) {
         <span><b>${temp}°C</b>Temperatura</span>
         <span><b>${humidity}%</b>Umidade</span>
         <span><b>${wind} km/h</b>Vento</span>
-        <span><b>${rain.toFixed(1)} mm</b>Chuva hoje</span>
+        <span><b>${rain.toFixed(1)} mm</b>Chuva simulada</span>
       </div>
     </article>
   `;
 }
 
-async function loadLiveWeather() {
+function loadSimulatedWeather() {
   const weatherGrid = document.querySelector("#liveWeatherGrid");
   const forecastTable = document.querySelector("#forecastTable");
   const updatedAt = document.querySelector("#weatherUpdatedAt");
 
   if (!weatherGrid && !forecastTable) return;
 
-  try {
-    const results = await Promise.all(
-      monitoredPlaces.map(async (place) => ({
-        place,
-        weather: await getWeather(place)
-      }))
-    );
+  const cards = monitoredPlaces.map((place) => renderWeatherCard(place)).join("");
 
-    const cards = results.map(({ place, weather }) => renderWeatherCard(place, weather)).join("");
-
-    if (weatherGrid) weatherGrid.innerHTML = cards;
-    if (forecastTable) forecastTable.innerHTML = cards;
-    if (updatedAt) {
-      updatedAt.textContent = `Atualizado em ${new Date().toLocaleString("pt-BR")}. Fonte: Open-Meteo.`;
-    }
-  } catch (error) {
-    const fallback = `
-      <article class="live-card">
-        <strong>Dados reais indisponíveis</strong>
-        <p>Não foi possível conectar com a Open-Meteo agora. Verifique a internet e recarregue a página.</p>
-      </article>
-    `;
-
-    if (weatherGrid) weatherGrid.innerHTML = fallback;
-    if (forecastTable) forecastTable.innerHTML = fallback;
-    if (updatedAt) updatedAt.textContent = "Falha ao atualizar os dados climáticos reais.";
+  if (weatherGrid) weatherGrid.innerHTML = cards;
+  if (forecastTable) forecastTable.innerHTML = cards;
+  if (updatedAt) {
+    updatedAt.textContent = `Simulação atualizada em ${new Date().toLocaleString("pt-BR")}. Dados demonstrativos do protótipo.`;
   }
 }
 
@@ -184,8 +166,5 @@ updateLiveClock();
 updateOperationalCounters();
 setInterval(updateLiveClock, 1000);
 setInterval(updateOperationalCounters, 3000);
-loadLiveWeather();
-setInterval(loadLiveWeather, 10 * 60 * 1000);
-
-
-
+loadSimulatedWeather();
+setInterval(loadSimulatedWeather, 3000);

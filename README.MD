@@ -12,7 +12,7 @@ Desastres naturais como enchentes, queimadas, secas, tempestades e deslizamentos
 
 ## Solução proposta
 
-O OrbitAlert simula uma plataforma de inteligência ambiental que utiliza dados orbitais, indicadores climáticos e lógica preditiva para acompanhar áreas de risco, estimar a severidade de eventos e distribuir alertas por diferentes canais.
+O OrbitAlert simula uma plataforma de inteligência ambiental que utiliza dados orbitais, indicadores climáticos demonstrativos e lógica preditiva para acompanhar áreas de risco, estimar a severidade de eventos e distribuir alertas por diferentes canais.
 
 ## Tecnologias utilizadas
 
@@ -20,17 +20,17 @@ O OrbitAlert simula uma plataforma de inteligência ambiental que utiliza dados 
 - CSS3 responsivo com media queries
 - JavaScript puro
 - Imagens e ícones locais na pasta `assets/`
-- API pública Open-Meteo para previsão climática real
+- Dados climáticos simulados no próprio JavaScript
 
-## Observação sobre bibliotecas
+## Observação sobre bibliotecas e serviços externos
 
-O projeto não utiliza frameworks ou bibliotecas externas, como Bootstrap, Tailwind, jQuery, React, Vue ou Angular. Todo o front-end foi desenvolvido com HTML, CSS e JavaScript puro.
+O projeto não utiliza frameworks, bibliotecas externas ou serviços externos. Todo o front-end foi desenvolvido com HTML, CSS e JavaScript puro. Os dados de clima, risco, satélites e alertas são simulados para fins acadêmicos.
 
 ## Funcionalidades
 
 - Menu de navegação responsivo.
 - Página inicial com apresentação da solução.
-- Monitoramento com mapa, alertas ativos e dados climáticos reais.
+- Monitoramento com mapa, alertas ativos e dados climáticos simulados.
 - Simulador de previsão de risco.
 - Página de alertas multicanal.
 - Página sobre o projeto.
@@ -96,7 +96,7 @@ GLOBAL SOLUTION/
 ## Páginas do projeto
 
 - `html/index.html`: página inicial do OrbitAlert.
-- `html/solucao-monitoramento.html`: painel de monitoramento, mapa orbital, alertas ativos e dados climáticos reais.
+- `html/solucao-monitoramento.html`: painel de monitoramento, mapa orbital, alertas ativos e dados climáticos simulados.
 - `html/previsao.html`: simulador de previsão de risco por IA.
 - `html/solucao-alertas.html`: canais de alerta e níveis de severidade.
 - `html/sobre.html`: explicação do problema, da solução e das tecnologias.
@@ -108,9 +108,9 @@ GLOBAL SOLUTION/
 
 O arquivo `css/responsive.css` concentra as adaptações para telas grandes, tablets e celulares, com breakpoints em `1300px`, `980px`, `768px`, `620px` e `480px`.
 
-## Dados em tempo real
+## Dados simulados
 
-O projeto usa a API pública Open-Meteo para buscar dados climáticos reais de Porto Alegre, Belém, Recife, Cuiabá e Petrolina. Indicadores como satélites ativos, eventos do dia e alertas críticos são demonstrativos, pois bases oficiais de focos de calor, deslizamentos e alertas institucionais normalmente exigem integração específica, permissão ou chave de API.
+O projeto apresenta dados demonstrativos de temperatura, umidade, vento, chuva, risco ambiental, satélites ativos, eventos do dia e alertas críticos. Esses valores são gerados no JavaScript para demonstrar a experiência da plataforma sem depender de conexão com a internet.
 
 ## Integrantes
 
