@@ -33,3 +33,13 @@
 .faq-item.is-open .faq-answer {
   display: block;
 }
+
+@media (max-width: 420px) {
+  .faq-question {
+    padding: 16px;
+  }
+
+  .faq-answer {
+    padding-inline: 16px;
+  }
+}

@@ -22,3 +22,9 @@
   color: var(--text);
   background: rgba(17, 24, 39, 0.60);
 }
+
+@media (max-width: 620px) {
+  .button {
+    width: 100%;
+  }
+}

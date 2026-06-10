@@ -1,4 +1,4 @@
-const monitoredPlaces = [
+﻿const monitoredPlaces = [
   {
     name: "Porto Alegre",
     region: "Rio Grande do Sul",
@@ -8,8 +8,8 @@ const monitoredPlaces = [
     weight: "flood"
   },
   {
-    name: "Belem",
-    region: "Amazonia (PA)",
+    name: "Belém",
+    region: "Amazônia (PA)",
     event: "Queimada / chuva intensa",
     lat: -1.4558,
     lon: -48.4902,
@@ -24,7 +24,7 @@ const monitoredPlaces = [
     weight: "landslide"
   },
   {
-    name: "Cuiaba",
+    name: "Cuiabá",
     region: "Mato Grosso",
     event: "Queimada",
     lat: -15.6014,
@@ -33,7 +33,7 @@ const monitoredPlaces = [
   },
   {
     name: "Petrolina",
-    region: "Sertao (PE)",
+    region: "Sertão (PE)",
     event: "Seca severa",
     lat: -9.3891,
     lon: -40.5030,
@@ -46,7 +46,7 @@ function updateLiveClock() {
   if (!clock) return;
 
   const now = new Date();
-  clock.textContent = `Online · ${now.toLocaleTimeString("pt-BR", {
+  clock.textContent = `Online - ${now.toLocaleTimeString("pt-BR", {
     hour: "2-digit",
     minute: "2-digit",
     second: "2-digit"
@@ -91,9 +91,9 @@ function calculateRisk(place, weather) {
 }
 
 function riskLabel(risk) {
-  if (risk >= 85) return { text: "Critico", className: "risk-critical" };
+  if (risk >= 85) return { text: "Crítico", className: "risk-critical" };
   if (risk >= 70) return { text: "Alto", className: "risk-high" };
-  if (risk >= 45) return { text: "Medio", className: "risk-medium" };
+  if (risk >= 45) return { text: "Médio", className: "risk-medium" };
   return { text: "Baixo", className: "risk-low" };
 }
 
@@ -110,7 +110,7 @@ async function getWeather(place) {
   const response = await fetch(`https://api.open-meteo.com/v1/forecast?${params.toString()}`);
 
   if (!response.ok) {
-    throw new Error("Nao foi possivel carregar a previsao.");
+    throw new Error("Não foi possível carregar a previsão.");
   }
 
   return response.json();
@@ -129,11 +129,11 @@ function renderWeatherCard(place, weather) {
       <div class="live-card__top">
         <div>
           <strong>${place.name}</strong>
-          <small>${place.region} · ${place.event}</small>
+          <small>${place.region} - ${place.event}</small>
         </div>
         <span class="live-risk">${risk}%</span>
       </div>
-      <p class="${label.className}">Nivel de risco: ${label.text}</p>
+      <p class="${label.className}">Nível de risco: ${label.text}</p>
       <div class="live-metrics">
         <span><b>${temp}°C</b>Temperatura</span>
         <span><b>${humidity}%</b>Umidade</span>
@@ -169,14 +169,14 @@ async function loadLiveWeather() {
   } catch (error) {
     const fallback = `
       <article class="live-card">
-        <strong>Dados reais indisponiveis</strong>
-        <p>Nao foi possivel conectar com a Open-Meteo agora. Verifique a internet e recarregue a pagina.</p>
+        <strong>Dados reais indisponíveis</strong>
+        <p>Não foi possível conectar com a Open-Meteo agora. Verifique a internet e recarregue a página.</p>
       </article>
     `;
 
     if (weatherGrid) weatherGrid.innerHTML = fallback;
     if (forecastTable) forecastTable.innerHTML = fallback;
-    if (updatedAt) updatedAt.textContent = "Falha ao atualizar os dados climaticos reais.";
+    if (updatedAt) updatedAt.textContent = "Falha ao atualizar os dados climáticos reais.";
   }
 }
 
@@ -186,3 +186,6 @@ setInterval(updateLiveClock, 1000);
 setInterval(updateOperationalCounters, 3000);
 loadLiveWeather();
 setInterval(loadLiveWeather, 10 * 60 * 1000);
+
+
+

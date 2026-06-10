@@ -1,4 +1,4 @@
-const contactForm = document.querySelector("#contactForm");
+﻿const contactForm = document.querySelector("#contactForm");
 
 function isValidEmail(value) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
@@ -10,7 +10,7 @@ if (contactForm) {
 
     const fields = [
       { input: document.querySelector("#name"), message: "Informe seu nome." },
-      { input: document.querySelector("#email"), message: "Informe um e-mail valido.", validate: isValidEmail },
+      { input: document.querySelector("#email"), message: "Informe um e-mail válido.", validate: isValidEmail },
       { input: document.querySelector("#message"), message: "Escreva uma mensagem." }
     ];
 
@@ -32,10 +32,13 @@ if (contactForm) {
     const status = document.querySelector("#formStatus");
 
     if (isValid) {
-      status.textContent = "Mensagem validada com sucesso. Envio simulado para a entrega academica.";
+      status.textContent = "Mensagem validada com sucesso. Envio simulado para a entrega acadêmica.";
       contactForm.reset();
     } else {
       status.textContent = "";
     }
   });
 }
+
+
+

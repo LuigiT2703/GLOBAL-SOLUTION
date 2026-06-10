@@ -1,6 +1,25 @@
+@media (min-width: 1300px) {
+  .container {
+    width: min(1240px, calc(100% - 64px));
+  }
+
+  .hero {
+    min-height: 760px;
+  }
+
+  .hero h1 {
+    max-width: 920px;
+  }
+}
+
 @media (max-width: 980px) {
+  .site-header {
+    position: sticky;
+    top: 0;
+  }
+
   .menu-toggle {
-    display: inline-block;
+    display: inline-flex;
   }
 
   .site-nav {
@@ -11,6 +30,7 @@
     display: none;
     flex-direction: column;
     align-items: stretch;
+    gap: 8px;
     padding: 14px 18px 18px;
     background: rgba(7, 11, 22, 0.98);
     border-bottom: 1px solid var(--border);
@@ -20,8 +40,14 @@
     display: flex;
   }
 
+  .site-nav a {
+    width: 100%;
+    padding: 12px 14px;
+  }
+
   .site-nav .nav-cta {
     margin-left: 0;
+    text-align: center;
   }
 
   .stats-grid,
@@ -35,7 +61,37 @@
   .split-grid,
   .monitor-grid,
   .contact-layout {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero h1,
+  .page-hero h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: 64px 0;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 112px 0 72px;
+  }
+
+  .hero__actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .button {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .modal__box {
+    width: min(92vw, 520px);
   }
 }
 
@@ -46,7 +102,13 @@
 
   .hero h1,
   .page-hero h1 {
-    font-size: 2.5rem;
+    font-size: 2.35rem;
+  }
+
+  .section-heading h2,
+  .split-grid h2,
+  .cta-box h2 {
+    font-size: 2rem;
   }
 
   .stats-grid,
@@ -63,12 +125,60 @@
     grid-template-columns: 1fr;
   }
 
-  .button {
-    width: 100%;
+  .member-card,
+  .glow-card,
+  .alert-card,
+  .live-card {
+    min-width: 0;
   }
 
   .footer-grid {
     align-items: flex-start;
     flex-direction: column;
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-header {
+    min-height: 64px;
+    padding-inline: 14px;
+  }
+
+  .site-nav {
+    top: 64px;
+  }
+
+  .brand {
+    font-size: 1rem;
+  }
+
+  .brand__icon {
+    width: 34px;
+    height: 34px;
+  }
+
+  .hero h1,
+  .page-hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p,
+  .page-hero p,
+  .section-heading p {
+    font-size: 1rem;
+  }
+
+  .metric-row article,
+  .stats-grid article {
+    padding: 18px;
+  }
+
+  .member-links {
+    flex-direction: column;
+  }
+
+  .member-links a {
+    width: 100%;
   }
 }

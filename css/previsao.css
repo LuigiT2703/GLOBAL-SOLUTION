@@ -88,3 +88,33 @@
 .risk-medium { color: var(--yellow); }
 .risk-high { color: var(--orange); }
 .risk-critical { color: var(--red); }
+
+@media (max-width: 1040px) {
+  .live-weather-grid,
+  .forecast-table {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 620px) {
+  .live-weather-grid,
+  .forecast-table {
+    grid-template-columns: 1fr;
+  }
+
+  .live-card {
+    padding: 18px;
+  }
+
+  .live-card__top {
+    flex-direction: column;
+  }
+
+  .live-risk {
+    align-self: flex-start;
+  }
+
+  .live-metrics {
+    grid-template-columns: 1fr;
+  }
+}
